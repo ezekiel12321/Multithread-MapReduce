@@ -1,2 +1,3 @@
-# Multithread-MapReduce
-This is a Multithreaded C program for Map Reduce Which takes a list of files and extracts the words, maps them to different lists, and reduces them
+# Project 2: MapReduce
+
+See wiki for instructions: https://github.com/UCSC-CSE-130/project2-map-reduce/wiki/README

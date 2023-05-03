@@ -1,0 +1,144 @@
+==68082== Memcheck, a memory error detector
+==68082== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==68082== Using Valgrind-3.18.1-42b08ed5bd-20211015 and LibVEX; rerun with -h for copyright info
+==68082== Command: ./word-count 1 1 file1.txt file2.txt
+==68082== Parent PID: 68063
+==68082== 
+--68082-- 
+--68082-- Valgrind options:
+--68082--    --leak-check=full
+--68082--    --show-leak-kinds=all
+--68082--    --track-origins=yes
+--68082--    --verbose
+--68082--    --log-file=valgrind_output.txt
+--68082-- Contents of /proc/version:
+--68082--   Linux version 5.15.49-linuxkit (root@buildkitsandbox) (gcc (Alpine 10.2.1_pre1) 10.2.1 20201203, GNU ld (GNU Binutils) 2.35.2) #1 SMP PREEMPT Tue Sep 13 07:51:32 UTC 2022
+--68082-- 
+--68082-- Arch and hwcaps: ARM64, LittleEndian, v8-fhm-dpbcvadp-sha3-rdm-atomics-fp16-vfp16
+--68082-- Page sizes: currently 4096, max supported 65536
+--68082-- Valgrind library directory: /usr/libexec/valgrind
+--68082-- Reading syms from /workspaces/cse-130-project2-ezekiel12321/word-count
+--68082-- Reading syms from /usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+--68082--   Considering /usr/lib/debug/.build-id/9a/9c6aeba5df4178de168e26fe30ddcdab47d374.debug ..
+--68082--   .. build-id is valid
+--68082-- Reading syms from /usr/libexec/valgrind/memcheck-arm64-linux
+--68082--    object doesn't have a symbol table
+--68082--    object doesn't have a dynamic symbol table
+--68082-- Scheduler: using generic scheduler lock implementation.
+--68082-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==68082== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-68082-by-vscode-on-9ce70e1041cc
+==68082== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-68082-by-vscode-on-9ce70e1041cc
+==68082== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-68082-by-vscode-on-9ce70e1041cc
+==68082== 
+==68082== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==68082== don't want to do, unless you know exactly what you're doing,
+==68082== or are doing some strange experiment):
+==68082==   /usr/bin/vgdb --pid=68082 ...command...
+==68082== 
+==68082== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==68082==   /path/to/gdb ./word-count
+==68082== and then give GDB the following command
+==68082==   target remote | /usr/bin/vgdb --pid=68082
+==68082== --pid is optional if only one valgrind process is running
+==68082== 
+--68082-- REDIR: 0x401ee00 (ld-linux-aarch64.so.1:strlen) redirected to 0x580b918c (???)
+--68082-- REDIR: 0x401de00 (ld-linux-aarch64.so.1:strcmp) redirected to 0x580b91e0 (???)
+--68082-- REDIR: 0x401dd40 (ld-linux-aarch64.so.1:index) redirected to 0x580b91b4 (???)
+--68082-- Reading syms from /usr/libexec/valgrind/vgpreload_core-arm64-linux.so
+--68082--    object doesn't have a symbol table
+--68082-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so
+--68082--    object doesn't have a symbol table
+--68082-- Reading syms from /usr/lib/aarch64-linux-gnu/libc.so.6
+--68082--   Considering /usr/lib/debug/.build-id/f3/7f3aa07c797e333fd106472898d361f71798f5.debug ..
+--68082--   .. build-id is valid
+==68082== WARNING: new redirection conflicts with existing -- ignoring it
+--68082--     old: 0x0491e340 (memalign            ) R-> (1011.0) 0x0486a540 memalign
+--68082--     new: 0x0491e340 (memalign            ) R-> (1017.0) 0x0486a520 aligned_alloc
+==68082== WARNING: new redirection conflicts with existing -- ignoring it
+--68082--     old: 0x0491e340 (memalign            ) R-> (1011.0) 0x0486a540 memalign
+--68082--     new: 0x0491e340 (memalign            ) R-> (1017.0) 0x0486a500 aligned_alloc
+--68082-- REDIR: 0x4921620 (libc.so.6:memchr) redirected to 0x4840710 (_vgnU_ifunc_wrapper)
+--68082-- REDIR: 0x4920650 (libc.so.6:strlen) redirected to 0x4840710 (_vgnU_ifunc_wrapper)
+--68082-- REDIR: 0x4920a40 (libc.so.6:rindex) redirected to 0x486ac40 (rindex)
+--68082-- REDIR: 0x491d640 (libc.so.6:malloc) redirected to 0x4864fe0 (malloc)
+--68082-- REDIR: 0x4921240 (libc.so.6:strstr) redirected to 0x4870160 (strstr)
+--68082-- REDIR: 0x49296c0 (libc.so.6:__GI_memchr) redirected to 0x486c490 (__GI_memchr)
+--68082-- REDIR: 0x4927b40 (libc.so.6:__GI_memcpy) redirected to 0x486cf00 (__GI_memcpy)
+--68082-- REDIR: 0x4929940 (libc.so.6:__strlen_asimd) redirected to 0x486b274 (strlen)
+--68082-- REDIR: 0x4920180 (libc.so.6:strcpy) redirected to 0x486b3c0 (strcpy)
+--68082-- REDIR: 0x491dbd4 (libc.so.6:free) redirected to 0x4867a60 (free)
+--68082-- REDIR: 0x491e470 (libc.so.6:calloc) redirected to 0x4869e90 (calloc)
+--68082-- REDIR: 0x4920c90 (libc.so.6:strspn) redirected to 0x4870450 (strspn)
+--68082-- REDIR: 0x49202a0 (libc.so.6:strcspn) redirected to 0x4870370 (strcspn)
+--68082-- REDIR: 0x4923700 (libc.so.6:strchrnul) redirected to 0x486f914 (strchrnul)
+--68082-- REDIR: 0x49298c0 (libc.so.6:__GI_strlen) redirected to 0x486b2a0 (__GI_strlen)
+--68082-- REDIR: 0x4920000 (libc.so.6:strcmp) redirected to 0x486c2d0 (strcmp)
+==68082== 
+==68082== HEAP SUMMARY:
+==68082==     in use at exit: 296 bytes in 19 blocks
+==68082==   total heap usage: 114 allocs, 95 frees, 23,090 bytes allocated
+==68082== 
+==68082== Searching for pointers to 19 not-freed blocks
+==68082== Checked 98,656 bytes
+==68082== 
+==68082== 16 bytes in 1 blocks are indirectly lost in loss record 1 of 8
+==68082==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==68082==    by 0x10961B: kvlist_append (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x10A083: map_reduce (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x10931F: main (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082== 
+==68082== 16 bytes in 1 blocks are indirectly lost in loss record 2 of 8
+==68082==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==68082==    by 0x109547: kvlist_new (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x10A0CB: map_reduce (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x10931F: main (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082== 
+==68082== 32 bytes in 2 blocks are indirectly lost in loss record 3 of 8
+==68082==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==68082==    by 0x10961B: kvlist_append (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x108FB7: mapper (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x109E2B: thread (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x490D5C7: start_thread (pthread_create.c:442)
+==68082==    by 0x4975D1B: thread_start (clone.S:79)
+==68082== 
+==68082== 32 (16 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 4 of 8
+==68082==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==68082==    by 0x10961B: kvlist_append (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x10A083: map_reduce (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x10931F: main (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082== 
+==68082== 80 bytes in 5 blocks are indirectly lost in loss record 5 of 8
+==68082==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==68082==    by 0x10961B: kvlist_append (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x108FE3: mapper (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x109E2B: thread (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x490D5C7: start_thread (pthread_create.c:442)
+==68082==    by 0x4975D1B: thread_start (clone.S:79)
+==68082== 
+==68082== 112 bytes in 7 blocks are indirectly lost in loss record 6 of 8
+==68082==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==68082==    by 0x10961B: kvlist_append (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x109EB3: thread (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x490D5C7: start_thread (pthread_create.c:442)
+==68082==    by 0x4975D1B: thread_start (clone.S:79)
+==68082== 
+==68082== 128 (16 direct, 112 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 8
+==68082==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==68082==    by 0x109547: kvlist_new (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x109DF3: thread (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x490D5C7: start_thread (pthread_create.c:442)
+==68082==    by 0x4975D1B: thread_start (clone.S:79)
+==68082== 
+==68082== 136 (8 direct, 128 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+==68082==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==68082==    by 0x10A0AB: map_reduce (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082==    by 0x10931F: main (in /workspaces/cse-130-project2-ezekiel12321/word-count)
+==68082== 
+==68082== LEAK SUMMARY:
+==68082==    definitely lost: 40 bytes in 3 blocks
+==68082==    indirectly lost: 256 bytes in 16 blocks
+==68082==      possibly lost: 0 bytes in 0 blocks
+==68082==    still reachable: 0 bytes in 0 blocks
+==68082==         suppressed: 0 bytes in 0 blocks
+==68082== 
+==68082== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
